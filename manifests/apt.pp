@@ -34,7 +34,9 @@ class php::apt(
     location    => $location,
     release     => $release,
     repos       => $repos,
-    include_src => $include_src
+    include     => {
+      'src'     => $include_src
+    }
   }
 
   if ($dotdeb) {
@@ -45,7 +47,9 @@ class php::apt(
         location    => $location,
         release     => 'wheezy',
         repos       => $repos,
-        include_src => $include_src
+        include     => {
+          'src'     => $include_src
+        }
       }
     }
 
